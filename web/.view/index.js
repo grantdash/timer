@@ -153,7 +153,7 @@ pug_mixins["css"]([
       {name: "@loadingio/bootstrap.ext"},
       {name: "ldcover"}
     ]);
-pug_html = pug_html + "\u003Cstyle type=\"text\u002Fcss\"\u003Ehtml,body{width:100%;height:100%;margin:0;padding:0}\u003C\u002Fstyle\u003E\u003Cstyle type=\"text\u002Fcss\"\u003E.timer{color:#fff;font-size:10em;font-family:monospace;font-weight:700}\u003C\u002Fstyle\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E\u003Cdiv class=\"timer w-100 h-100 bg-dark d-flex align-items-center justify-content-center\"\u003E\u003Cspan ld=\"value\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003Cstyle type=\"text\u002Fcss\"\u003Ehtml,body{width:100%;height:100%;margin:0;padding:0}\u003C\u002Fstyle\u003E\u003Clink rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.googleapis.com\"\u003E\u003Clink" + (" rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.gstatic.com\""+pug_attr("crossorigin", true, true, true)) + "\u003E\u003Clink href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto+Mono:wght@600&amp;display=swap\" rel=\"stylesheet\"\u003E\u003Cstyle type=\"text\u002Fcss\"\u003E.timer{color:#fff;font-size:10em;font-weight:700;font-family:'Roboto Mono',monospace}\u003C\u002Fstyle\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E\u003Cdiv class=\"timer w-100 h-100 bg-dark d-flex align-items-center justify-content-center\"\u003E\u003Cspan ld=\"value\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E";
 pug_mixins["script"]([
       {name: "bootstrap.native", path: "dist/bootstrap-native.min.js"},
       {name: "proxise"},
