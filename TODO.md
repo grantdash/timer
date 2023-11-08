@@ -1,0 +1,6 @@
+ - customizable style ( font size, family, boldness; background and foreground color; etc )
+ - restore from a closed session with localstorage.
+ - modularize with block
+ - simple time configuration with button and slider (TBD)
+ - warning and notification with sound (customizable)
+ - multi-round timer
