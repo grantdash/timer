@@ -4,3 +4,6 @@
  - simple time configuration with button and slider (TBD)
  - warning and notification with sound (customizable)
  - multi-round timer
+ - server required
+   - realtime broadcast with hash key (either static or can be remotedly controlled)
+   - remote control
