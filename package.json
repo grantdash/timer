@@ -1,0 +1,47 @@
+{
+  "name": "@grantdash/timer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx server -r web -o true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@loadingio/bootstrap.ext": "^0.0.11",
+    "@loadingio/debounce.js": "^1.0.1",
+    "@loadingio/ldquery": "^3.0.5",
+    "@plotdb/block": "^5.2.4",
+    "@plotdb/csscope": "^5.0.3",
+    "@plotdb/rescope": "^5.0.11",
+    "@plotdb/semver": "^0.0.3",
+    "@zbryikt/template": "^2.3.45",
+    "bootstrap": "^4.6.1",
+    "bootstrap.native": "^3.0.13",
+    "fedep": "^1.1.11",
+    "ldcover": "^3.5.3",
+    "ldloader": "^3.0.2",
+    "ldview": "^1.4.0",
+    "proxise": "^1.0.1"
+  },
+  "frontendDependencies": {
+    "root": "web/static/assets/lib",
+    "modules": [
+      "@loadingio/bootstrap.ext",
+      "@loadingio/debounce.js",
+      "@loadingio/ldquery",
+      "@plotdb/block",
+      "@plotdb/csscope",
+      "@plotdb/rescope",
+      "@plotdb/semver",
+      "bootstrap",
+      "bootstrap.native",
+      "ldcover",
+      "ldloader",
+      "ldview",
+      "proxise"
+    ]
+  }
+}

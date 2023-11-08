@@ -1,0 +1,15 @@
+extends /base.pug
+block head
+  style(type="text/css"): :stylus
+    .timer
+      color: #fff
+      font-size: 10em
+      font-family: monospace
+      font-weight: 700
+
+block body
+
+  .timer.w-100.h-100.bg-dark.d-flex.align-items-center.justify-content-center
+    span(ld="value")
+block script
+  script(type="module"): include:lsc index.ls

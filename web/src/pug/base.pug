@@ -1,0 +1,24 @@
+//- module
+doctype html
+html
+  block vars
+  head
+    block prehead
+    +css([
+      {name: "bootstrap", path: "dist/css/bootstrap.min.css"},
+      {name: "@loadingio/bootstrap.ext"},
+      {name: "ldcover"}
+    ])
+    style(type="text/css"): include:stylus index.styl
+    block head
+  body
+    block body
+    +script([
+      {name: "bootstrap.native", path: "dist/bootstrap-native.min.js"},
+      {name: "proxise"},
+      {name: "@loadingio/debounce.js"},
+      {name: "@loadingio/ldquery"},
+      {name: "ldview"},
+      {name: "ldcover"}
+    ])
+    block script
