@@ -151,18 +151,23 @@ pug_html = pug_html + "\u003Chtml\u003E\u003Chead\u003E";
 pug_mixins["css"]([
       {name: "bootstrap", path: "dist/css/bootstrap.min.css"},
       {name: "@loadingio/bootstrap.ext"},
+      {name: "ldiconfont"},
       {name: "ldcover"}
     ]);
-pug_html = pug_html + "\u003Cstyle type=\"text\u002Fcss\"\u003Ehtml,body{width:100%;height:100%;margin:0;padding:0}\u003C\u002Fstyle\u003E\u003Clink rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.googleapis.com\"\u003E\u003Clink" + (" rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.gstatic.com\""+pug_attr("crossorigin", true, true, true)) + "\u003E\u003Clink href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto+Mono:wght@600&amp;display=swap\" rel=\"stylesheet\"\u003E\u003Cstyle type=\"text\u002Fcss\"\u003E.timer{color:#fff;font-size:10em;font-weight:700;font-family:'Roboto Mono',monospace}\u003C\u002Fstyle\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E\u003Cdiv class=\"timer w-100 h-100 bg-dark d-flex align-items-center justify-content-center\"\u003E\u003Cspan ld=\"value\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + "\u003Cstyle type=\"text\u002Fcss\"\u003Ehtml,body{width:100%;height:100%;margin:0;padding:0}\u003C\u002Fstyle\u003E\u003Clink rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.googleapis.com\"\u003E\u003Clink" + (" rel=\"preconnect\" href=\"https:\u002F\u002Ffonts.gstatic.com\""+pug_attr("crossorigin", true, true, true)) + "\u003E\u003Clink href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss2?family=Roboto+Mono:wght@600&amp;display=swap\" rel=\"stylesheet\"\u003E\u003C\u002Fhead\u003E\u003Cbody\u003E\u003Cdiv class=\"ldcv full\" ld=\"ldcv\"\u003E\u003Cdiv class=\"base\"\u003E\u003Cdiv class=\"position-absolute z-float text-white text-lg clickable\" style=\"top:1em;right:1em;\" data-ldcv-set=\"\"\u003E\u003Ci class=\"i-close\"\u003E\u003C\u002Fi\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"inner\" ld=\"container\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";
 pug_mixins["script"]([
       {name: "bootstrap.native", path: "dist/bootstrap-native.min.js"},
       {name: "proxise"},
       {name: "@loadingio/debounce.js"},
       {name: "@loadingio/ldquery"},
       {name: "ldview"},
-      {name: "ldcover"}
+      {name: "ldcover"},
+      {name: "@plotdb/semver"},
+      {name: "@plotdb/rescope"},
+      {name: "@plotdb/csscope"},
+      {name: "@plotdb/block"}
     ]);
-pug_html = pug_html + "\u003Cscript type=\"module\"\u003Evar view,wrap,value,runner,r;view=new ldview({root:document.body});wrap=function(t){var r,n,e;r=Math.floor(t\u002F3600);n=Math.floor(t%3600\u002F60);e=t%60;return[r,n,e].map(function(t){return(t+\"\").padStart(2,\"0\")}).join(\":\")};value=view.get(\"value\");runner=function(t){t==null&&(t={});this._sec=t.second;this._t={start:0,paused:0};this._running=false;return this};runner.prototype=import$(Object.create(Object.prototype),{play:function(){var r=this;this._t.start=(this._t.start||0)+Date.now()-(this._t.paused||0);this._t.paused=0;this._running=true;return requestAnimationFrame(function(t){return r.tick(t)})},pause:function(){this._running=false;return this._t.paused=Date.now()},reset:function(){this._t.start=this._t.paused=0;return this.play()},tick:function(t){var r,n=this;if(!this._running){return}requestAnimationFrame(function(t){return n.tick(t)});t=(r=this._sec-Math.floor((Date.now()-this._t.start)\u002F1e3))\u003E0?r:0;return value.innerText=wrap(t)}});r=new runner({second:120});r.play();function import$(t,r){var n={}.hasOwnProperty;for(var e in r)if(n.call(r,e))t[e]=r[e];return t}\u003C\u002Fscript\u003E\u003C\u002Fbody\u003E\u003C\u002Fhtml\u003E";
+pug_html = pug_html + "\u003Cscript type=\"module\"\u003Evar manager,view,ldcv;manager=new block.manager({registry:function(e){var n,r,t,a,i;n=e.ns,r=e.name,t=e.version,a=e.path,i=e.type;if(!t){t=\"main\"}if(!a){a=\"index.min.\"+(i||\"js\")}if(n===\"local\"){return\"\u002F\"+r+\"\u002F\"+a}return\"\u002Fassets\u002Flib\u002F\"+r+\"\u002F\"+t+\"\u002F\"+a}});view=new ldview({root:document.body});ldcv=new ldcover({root:view.get(\"ldcv\"),resident:true,inPlace:true});manager.from({ns:\"local\",name:\"block\",path:\"index.html\"},{root:view.get(\"container\")}).then(function(e){ldcv.get();return e[\"interface\"].play()});\u003C\u002Fscript\u003E\u003C\u002Fbody\u003E\u003C\u002Fhtml\u003E";
     }.call(this, "Array" in locals_for_with ?
         locals_for_with.Array :
         typeof Array !== 'undefined' ? Array : undefined, "c" in locals_for_with ?

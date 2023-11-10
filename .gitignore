@@ -2,3 +2,4 @@
 secret.*
 *.log
 node_modules
+_backlog

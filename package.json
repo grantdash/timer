@@ -22,6 +22,7 @@
     "bootstrap.native": "^3.0.13",
     "fedep": "^1.1.11",
     "ldcover": "^3.5.3",
+    "ldiconfont": "^0.2.6",
     "ldloader": "^3.0.2",
     "ldview": "^1.4.0",
     "proxise": "^1.0.1"
@@ -39,6 +40,7 @@
       "bootstrap",
       "bootstrap.native",
       "ldcover",
+      "ldiconfont",
       "ldloader",
       "ldview",
       "proxise"

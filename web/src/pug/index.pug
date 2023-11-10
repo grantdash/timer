@@ -3,16 +3,9 @@ block head
   link(rel="preconnect",href="https://fonts.googleapis.com")
   link(rel="preconnect",href="https://fonts.gstatic.com",crossorigin)
   link(href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap",rel="stylesheet")
-  style(type="text/css"): :stylus
-    .timer
-      color: #fff
-      font-size: 10em
-      font-weight: 700
-      font-family: 'Roboto Mono', monospace
-
 block body
-
-  .timer.w-100.h-100.bg-dark.d-flex.align-items-center.justify-content-center
-    span(ld="value")
+  .ldcv.full(ld="ldcv"): .base
+    .position-absolute.z-float.text-white.text-lg.clickable(style="top:1em;right:1em;",data-ldcv-set=""): i.i-close
+    .inner(ld="container")
 block script
   script(type="module"): include:lsc index.ls
