@@ -167,7 +167,7 @@ pug_mixins["script"]([
       {name: "@plotdb/csscope"},
       {name: "@plotdb/block"}
     ]);
-pug_html = pug_html + "\u003Cscript type=\"module\"\u003Evar manager,view,ldcv;manager=new block.manager({registry:function(e){var n,r,t,a,i;n=e.ns,r=e.name,t=e.version,a=e.path,i=e.type;if(!t){t=\"main\"}if(!a){a=\"index.min.\"+(i||\"js\")}if(n===\"local\"){return\"\u002F\"+r+\"\u002F\"+a}return\"\u002Fassets\u002Flib\u002F\"+r+\"\u002F\"+t+\"\u002F\"+a}});view=new ldview({root:document.body});ldcv=new ldcover({root:view.get(\"ldcv\"),resident:true,inPlace:true});manager.from({ns:\"local\",name:\"block\",path:\"index.html\"},{root:view.get(\"container\")}).then(function(e){ldcv.get();return e[\"interface\"].play()});\u003C\u002Fscript\u003E\u003C\u002Fbody\u003E\u003C\u002Fhtml\u003E";
+pug_html = pug_html + "\u003Cscript type=\"module\"\u003Evar manager,view,ldcv;manager=new block.manager({registry:function(e){var n,r,t,a,i;n=e.ns,r=e.name,t=e.version,a=e.path,i=e.type;if(!t){t=\"main\"}if(!a){a=\"index.min.\"+(i||\"js\")}if(n===\"local\"){return\"\u002F\"+r+\"\u002F\"+a}return\"\u002Fassets\u002Flib\u002F\"+r+\"\u002F\"+t+\"\u002F\"+a}});view=new ldview({root:document.body});ldcv=new ldcover({root:view.get(\"ldcv\"),resident:true,inPlace:true});manager.from({ns:\"local\",name:\"block\",path:\"index.html\"},{root:view.get(\"container\")}).then(function(e){ldcv.get();return e[\"interface\"].reset(480-40)});\u003C\u002Fscript\u003E\u003C\u002Fbody\u003E\u003C\u002Fhtml\u003E";
     }.call(this, "Array" in locals_for_with ?
         locals_for_with.Array :
         typeof Array !== 'undefined' ? Array : undefined, "c" in locals_for_with ?

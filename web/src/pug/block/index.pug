@@ -2,8 +2,10 @@
   style(type="text/css"): :stylus
     :scope.timer
       color: #fff
-      font-size: 10em
+      font-size: 1em
       font-weight: 700
       font-family: 'Roboto Mono', monospace
+    .value-ref { opacity: 0; position: absolute; pointer-events: none }
   script(type="@plotdb/block"): include:lsc index.ls
+  .value-ref(ld="value-ref")
   span(ld="value")

@@ -11,4 +11,4 @@ ldcv = new ldcover root: view.get(\ldcv), resident: true, in-place: true
 manager.from {ns: \local, name: \block, path: "index.html"}, {root: view.get(\container)}
   .then (ret) ->
     ldcv.get!
-    ret.interface.play!
+    ret.interface.reset(480 - 40)

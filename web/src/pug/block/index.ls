@@ -1,17 +1,20 @@
 module.exports =
   pkg: {}
   interface: -> @runner
-  init: ->
-    view = new ldview do
-      root: document.body
+  init: ({root}) ->
+    view = new ldview { root: root }
+    cfg = {}
 
     wrap = (t) ->
       h = Math.floor(t / 3600)
       m = Math.floor((t % 3600) / 60)
       s = t % 60
-      [h,m,s].map(-> "#it".padStart(2, "0")).join(':')
+      vs = [m,s]
+      if h or cfg.{}show.hour => vs = [h] ++ vs
+      vs.map(-> "#it".padStart(2, "0")).join(':')
 
     value = view.get(\value)
+    value-ref = view.get(\value-ref)
 
     runner = (o={}) ->
       @_sec = o.second
@@ -36,7 +39,10 @@ module.exports =
         if !@_running => return
         requestAnimationFrame (t) ~> @tick t
         t = (@_sec - Math.floor((Date.now! - @_t.start) / 1000)) >? 0
-        value.innerText = wrap t
+        value.innerText = value-ref.innerText = wrap t
+        box = value-ref.getBoundingClientRect!
+        rbox = root.getBoundingClientRect!
+        ratio = 0.9 * (rbox.width / (box.width or 1)).toFixed(2)
+        value.style.fontSize = "#{ratio}em"
 
     @runner = new runner second: 60
-
